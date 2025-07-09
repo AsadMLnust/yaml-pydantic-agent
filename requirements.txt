@@ -1,0 +1,12 @@
+langchain
+langchain-core
+langchain-community
+crewai
+langchain-groq
+Pandas
+crewai[tools]
+flask
+gunicorn
+PyYAML
+pydantic
+python-dotenv
