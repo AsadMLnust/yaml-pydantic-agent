@@ -4,7 +4,7 @@ langchain-community
 crewai
 langchain-groq
 Pandas
-crewai[tools]
+crewai-tools
 flask
 gunicorn
 PyYAML
