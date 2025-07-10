@@ -118,15 +118,15 @@ class CrewConfig(BaseModel):
 
 ### Agent Customization
 Edit config.yaml to customize your AI agents (validated by Pydantic):
-agents:
-  - name: "sql_dev"
-    role: "Senior Database Developer"
-    goal: "Construct and execute SQL queries for any type of data analysis"
-    backstory: >
-      You are an experienced database engineer who works with diverse datasets.
-      Whether it's sales data, HR records, inventory, or financial statements,
-      you can quickly understand any schema and extract the right information.
-    tools:
+agents:<br/>
+name: "sql_dev"<br/>
+    role: "Senior Database Developer"<br/>
+    goal: "Construct and execute SQL queries for any type of data analysis"<br/>
+    backstory: ><br/>
+      You are an experienced database engineer who works with diverse datasets.<br/>
+      Whether it's sales data, HR records, inventory, or financial statements,<br/>
+      you can quickly understand any schema and extract the right information.<br/>
+    tools:<br/>
       - "list_tables"
       - "tables_schema"
       - "execute_sql"
