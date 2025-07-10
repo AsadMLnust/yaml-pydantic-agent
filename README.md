@@ -6,7 +6,7 @@ A sophisticated Flask web application that leverages CrewAI's multi-agent system
 
 ## ✨ What Makes This Special?
 
-🤖 **Three AI Specialists Working in Harmony:**
+🤖 **Three AI Specialists Agent Working in Harmony:**
 - **SQL Developer** - Master of database queries and data extraction
 - **Data Analyst** - Expert in financial data interpretation
 - **Report Writer** - Specialist in creating clear, executive-level summaries
@@ -94,9 +94,16 @@ financial-analysis-system/
 ```
 
 ## ⚙️ Configuration & Validation
+
 ### Pydantic Schema Validation
-The system uses Pydantic for robust configuration management:
-pythonclass AgentConfig(BaseModel):
+
+The system uses **Pydantic** for robust configuration management:
+
+```python
+from pydantic import BaseModel, Field
+from typing import List
+
+class AgentConfig(BaseModel):
     name: str
     role: str
     goal: str
@@ -107,17 +114,11 @@ pythonclass AgentConfig(BaseModel):
 
 class CrewConfig(BaseModel):
     agents: List[AgentConfig]
-Benefits of Pydantic Integration:
-
-✅ Automatic data validation
-✅ Type checking for configuration
-✅ Clear error messages for invalid configs
-✅ IDE support with autocompletion
-✅ Prevents runtime errors from bad configurations
+```
 
 ### Agent Customization
 Edit config.yaml to customize your AI agents (validated by Pydantic):
-yamlagents:
+agents:
   - name: "sql_dev"
     role: "Senior Database Developer"
     goal: "Construct and execute SQL queries for any type of data analysis"
@@ -131,7 +132,7 @@ yamlagents:
       - "execute_sql"
       - "check_sql"
     allow_delegation: false
-    verbose: true
+
 ### Adding New Tools
 
 The system is designed to be extensible. Add new tools in `app.py`:
@@ -180,20 +181,6 @@ Try these sample questions to see the system in action:
 **Profitability:**
 - "Calculate our profit margins for each product line"
 - "What's driving our profitability changes?"
-
-### Development Setup
-
-```bash
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install development dependencies
-pip install -r requirements.txt
-
-# Run in development mode
-python app.py
-```
 
 ##  Acknowledgments
 
